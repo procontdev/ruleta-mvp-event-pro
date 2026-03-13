@@ -1,0 +1,20 @@
+{
+  "name": "pacifico",
+  "logo": "/brand/logo.svg",
+  "colors": {
+    "bg": "#0099CC",
+    "card": "#0099CC",
+    "text": "#FFFFFF",
+    "primary": "#FFFFFF",
+    "accent": "#33B8E6",
+    "border": "#BFE9F9",
+    "inputBg": "#FFFFFF",
+    "inputText": "#083344",
+    "buttonText": "#0099CC"
+  },
+  "wheel": ["#007DA6", "#33B8E6", "#66CCFF", "#008FBF", "#4DC8E1", "#00A9D6", "#19BFE7", "#66CCFF"],
+  "font": {
+    "family": "Inter",
+    "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+  }
+}

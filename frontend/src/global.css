@@ -1,0 +1,6 @@
+/* Evita que el padding/border hagan overflow en width:100% */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* (opcional) Ajustes base */
+html, body, #root { height: 100%; }
+body { margin: 0; }
