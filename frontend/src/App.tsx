@@ -17,7 +17,7 @@ type Segment = {
 };
 
 export default function App() {
-  const [eventId, setEventId] = useState<number>(() => resolveEventId());
+  const [eventId] = useState<number>(() => resolveEventId());
   const [brand, setBrand] = useState<Brand | null>(null);
 
   const [step, setStep] = useState<'register' | 'play'>('register');
@@ -25,7 +25,7 @@ export default function App() {
   const [spinning, setSpinning] = useState(false);
   const [spinResult, setSpinResult] = useState<SpinResponse | null>(null);
   const [error, setError] = useState('');
-  const EVENT_ID = resolveEventId();
+  // const EVENT_ID = resolveEventId();
   const [usuarioId, setUsuarioId] = useState<number | null>(() => {
     const saved = localStorage.getItem('ruleta_usuarioId');
     return saved ? Number(saved) : null;
@@ -151,7 +151,7 @@ const [spinMs, setSpinMs] = useState<number>(2200);
 
   try {
     // 1) pide resultado real al backend
-    const res = await api.spin({ eventId: EVENT_ID, usuarioId });
+    const res = await api.spin({ eventId, usuarioId });
 
     // 2) calcula el centro del segmento objetivo
     let targetCenter = 0;
@@ -430,17 +430,7 @@ logofooter: {
     display: 'block'
   },
 
-  button: {
-    marginTop: 14,
-    padding: '12px 16px',
-    boxSizing: 'border-box',
-    borderRadius: 12,
-    border: 'none',
-    background: 'var(--primary)',
-    color: 'var(--button-text)',
-    fontWeight: 800 as any,
-    cursor: 'pointer'
-  },
+  
   secondary: {
     marginTop: 14,
     padding: '12px 16px',
@@ -486,5 +476,9 @@ logofooter: {
     transform: 'translateX(-50%)',
     fontSize: 22,
     color: '#fff'
-  }
+  },
+  cardContent: {
+  position: 'relative',
+  zIndex: 1
+}
 };

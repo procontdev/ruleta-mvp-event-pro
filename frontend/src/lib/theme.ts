@@ -1,4 +1,4 @@
-import { API_BASE } from './api';
+// import { API_BASE } from './api';
 
 export type Brand = {
   name?: string;
@@ -68,7 +68,7 @@ export function wheelColorsOf(b: Brand): string[] {
   return b.wheel && b.wheel.length ? b.wheel! : DEFAULTS.wheel;
 }
 
-export async function loadBrand(eventId: number): Promise<Brand> {
+export async function loadBrand(_eventId: number): Promise<Brand> {
   try {
     const res = await fetch('/brand/default.json', { cache: 'no-store' });
     if (res.ok) {
