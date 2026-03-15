@@ -9,9 +9,15 @@ using Microsoft.AspNetCore.Routing.Patterns;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// CORS para front local y proxy
-var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
-                     ?? new[] { "http://localhost:5173", "http://localhost:8080" };
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>()
+    ?? new[]
+    {
+        "http://localhost:5173",
+        "http://localhost:8080",
+        "https://eventprolabs-ruleta-mvp.3haody.easypanel.host"
+    };
 
 builder.Services.AddCors(opt =>
 {
